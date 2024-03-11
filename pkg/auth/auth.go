@@ -35,6 +35,7 @@ import (
 
 // Ensures a validated UserKey exists
 func BootstrapUserKey(userKeyPath, userKeyDirectory string) error {
+	fmt.Print("DEBUG: user key path, user key directory: ", userKeyPath, userKeyDirectory)
 	if keyExists, _ := fileutils.DoesFileExists(userKeyPath); keyExists {
 		// if verification fails, continue to regenerate
 		if err := VerifyUserKeyFile(userKeyPath); err == nil {
